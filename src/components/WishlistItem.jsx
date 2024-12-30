@@ -1,4 +1,3 @@
-// src/components/WishlistItem.jsx
 import { useState } from 'react';
 
 const WishlistItem = ({ item, onDelete, onUpdate }) => {

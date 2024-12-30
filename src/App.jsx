@@ -17,8 +17,9 @@ function App() {
       <Route
         path="/"
         element={
+          // Private Route for dashboard, will redirect to login if no token
           <PrivateRoute>
-            <Dashboard />
+            <Dashboard /> 
           </PrivateRoute>
         }
       />
