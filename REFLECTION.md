@@ -5,3 +5,5 @@ Another challenge was figuring out how to grab only the wishlists that belonged 
 For deployment, I deployed the front end on Vercel and the backend on Render. To make it easy to switch between environments, I used an environment variable to store my backend path. This way, I could easily replace the localhost URL with the one Render provided. I also created an Axios instance, which made it seamless to switch between the two.
 
 Lastly, I had a bit of trouble with the priority feature for wishlist items. Originally, I was using strings like “low,” “medium,” and “high,” but I ran into issues when trying to sort them. So, I decided to change the priority to numbers—1 for low, 2 for medium, and 3 for high. This approach worked much better and made sorting a lot simpler.
+
+Oh and also I initially had some trouble connecting to MongoDB Atlas when I switched over to that instead of my local URI, but then I realized I had forgotten to set my network settings to allow access from anywhere. 
