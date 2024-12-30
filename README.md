@@ -26,7 +26,7 @@ Welcome to the **Wishlist Tracker** frontend! This is a modern web application b
 
 ```
 git clone https://github.com/SarahE-Dev/wishlist-frontend.git
-cd wishlist-tracker-frontend```
+cd wishlist-frontend```
 
 ## Install Dependencies
 
