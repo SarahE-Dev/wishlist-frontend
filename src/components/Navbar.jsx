@@ -1,5 +1,4 @@
-// src/components/Navbar.jsx
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../features/userSlice';
 import { isValidToken } from '../utils/auth';
@@ -21,11 +20,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Left side - Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link 
+            <NavLink 
               to="/" 
               className="flex items-center"
             >
-              {/* You can add your logo here */}
               <svg 
                 className="h-8 w-8 text-indigo-500"
                 fill="none"
@@ -42,48 +40,42 @@ const Navbar = () => {
               <span className="ml-2 text-white text-lg font-semibold">
                 Wishlist App
               </span>
-            </Link>
+            </NavLink>
           </div>
 
           {/* Right side - Navigation Links */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
               <>
-                {/* Links for authenticated users */}
-                <Link
-                  to="/"
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  Home
-                </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 focus:ring-offset-gray-900"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900"
                 >
                   Logout
                 </button>
               </>
             ) : (
               <>
-                {/* Links for non-authenticated users */}
-                <Link
-                  to="/"
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  Home
-                </Link>
-                <Link
+                <NavLink
                   to="/login"
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900"
+                      : "text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  }
                 >
                   Login
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/signup"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900"
+                      : "text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  }
                 >
                   Sign Up
-                </Link>
+                </NavLink>
               </>
             )}
           </div>
