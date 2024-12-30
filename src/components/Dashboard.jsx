@@ -25,7 +25,7 @@ const Dashboard = () => {
   // Fetch wishlist items
   const fetchWishlist = async () => {
     try {
-      const response = await api.get('/wishlist');
+      const response = await api.get(`/wishlist?user=${user.id}`);
       setWishlistItems(response.data);
     } catch (err) {
       setError('Failed to fetch wishlist items');
@@ -37,8 +37,11 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetchWishlist();
-  }, []);
+    if(user){
+        fetchWishlist();
+    }
+    
+  }, [user]);
 
   // Add new item
   const handleAddItem = async (newItem) => {
