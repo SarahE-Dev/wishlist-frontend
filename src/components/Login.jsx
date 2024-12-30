@@ -14,7 +14,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (isValidToken()) {
+    if (isValidToken()) { // If user is already logged in go to dashboard
       navigate('/');
     }
   }, [navigate]);
@@ -32,7 +32,7 @@ const Login = () => {
       const response = await api.post("/users/login", formData);
       const { token } = response.data;
       const decoded = jwtDecode(token);
-      dispatch(login({ token, user: decoded }));
+      dispatch(login({ token, user: decoded })); // dispatch login
       setLoading(false);
       localStorage.setItem('token', token);
       navigate('/'); 

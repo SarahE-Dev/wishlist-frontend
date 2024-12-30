@@ -1,4 +1,3 @@
-// src/components/WishlistForm.jsx
 import { useState } from 'react';
 
 const WishlistForm = ({ onSubmit }) => {
@@ -13,7 +12,6 @@ const WishlistForm = ({ onSubmit }) => {
     onSubmit(formData);
     setFormData({ title: '', description: '', priority: 1 });
   };
-  console.log(formData);
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-800 p-6 rounded-lg shadow-lg">

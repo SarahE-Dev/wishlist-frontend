@@ -1,5 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 
+// Function to check if token exists and isn't expired
 export const isValidToken = () => {
   const token = localStorage.getItem('token');
   if (!token) return false;
@@ -13,6 +14,7 @@ export const isValidToken = () => {
   }
 };
 
+// Function to return decoded user
 export const getUserFromToken = () => {
     try {
       const token = localStorage.getItem('token');
@@ -28,6 +30,7 @@ export const getUserFromToken = () => {
     }
   };
   
+//   Simple function to get token
   export const getToken = () => {
     return localStorage.getItem('token');
   };

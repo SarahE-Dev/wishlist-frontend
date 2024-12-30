@@ -8,7 +8,8 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="min-h-screen overflow-auto bg-black" >
-    <Router>
+      {/* Router paths with private route for dashboard and navbar that appears everywhere */}
+    <Router> 
       <Navbar />
     <Routes>
       <Route path="/login" element={<Login />} />

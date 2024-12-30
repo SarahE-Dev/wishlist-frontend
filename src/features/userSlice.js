@@ -2,9 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Initial state for the user slice
 const initialState = {
-  user: null, // Store user details (e.g., name, email)
+  user: null, // Store user details (e.g., username, id)
   token: null, // Store the JWT
-  isAuthenticated: false, // Track authentication status
 };
 
 // Create the slice
@@ -31,4 +30,4 @@ const userSlice = createSlice({
 export const { login, logout, updateUser } = userSlice.actions;
 
 
-export default userSlice.reducer;
+export default userSlice.reducer; // Export reducer for store

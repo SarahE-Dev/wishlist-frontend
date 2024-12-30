@@ -13,7 +13,7 @@ const Signup = () => {
 
   useEffect(() => {
       if (isValidToken()) {
-        navigate('/');
+        navigate('/'); // If token navigate to dashboard
       }
     }, [navigate]);
 
@@ -35,9 +35,8 @@ const Signup = () => {
       const response = await api.post("/users/signup", formData);
       const { token } = response.data;
       const decoded = jwtDecode(token);
-      dispatch(login({ token, user: decoded }));
+      dispatch(login({ token, user: decoded })); // Dispatch login on signup 
       setLoading(false);
-
       navigate('/'); 
     } catch (err) {
       console.error('Signup failed:', err);

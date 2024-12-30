@@ -6,12 +6,12 @@ import { isValidToken } from '../utils/auth';
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isAuthenticated = isValidToken();
+  const isAuthenticated = isValidToken(); // Function to check if token is valid
 
   const handleLogout = () => {
     dispatch(logout());
     localStorage.removeItem('token');
-    navigate('/login');
+    navigate('/login'); // Remove token from localStorage and navigate back to login
   };
 
   return (
@@ -43,7 +43,7 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* Right side - Navigation Links */}
+          {/* Render Links based on token */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
               <>

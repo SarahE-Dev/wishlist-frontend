@@ -23,7 +23,7 @@ const WishlistItem = ({ item, onDelete, onUpdate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdate(item._id, editData);
+    onUpdate(item._id, editData); // Call passed update function on submit
     setIsEditing(false);
   };
 
