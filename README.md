@@ -35,7 +35,7 @@ Create a .env file in the root directory and add the following:
 
 bash
 Copy code
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:3001/api
 4. Run the Development Server
 bash
 Copy code
