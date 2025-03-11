@@ -38,7 +38,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="ml-2 text-white text-lg font-semibold">
-                Wishlist App
+                Wishlist Tracker
               </span>
             </NavLink>
           </div>

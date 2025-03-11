@@ -10,8 +10,7 @@ Welcome to the **Wishlist Tracker** frontend! This is a modern web application b
 * **Responsive Design:** A mobile-first, responsive design built with TailwindCSS.
 * **React Router:** Seamlessly navigate between login, signup, and wishlist management pages.
 
-
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 * **Frontend Framework:** React (v18+)
 * **Build Tool:** Vite
@@ -20,43 +19,43 @@ Welcome to the **Wishlist Tracker** frontend! This is a modern web application b
 * **State Management:** Redux Toolkit (for user authentication)
 * **Authentication:** JWT (JSON Web Token)
 
+## 🔧 Setup Instructions
 
-##🔧 Setup Instructions
-
-
+### 1. Clone the Repository
 ```
 git clone https://github.com/SarahE-Dev/wishlist-frontend.git
-cd wishlist-frontend```
-
-## Install Dependencies
-
+cd wishlist-frontend
 ```
-npm install```
 
-## Environment Variables
-
-Create a .env file in the root directory and add the following:
-
+### 2. Install Dependencies
 ```
-VITE_API_URL=http://localhost:3001/api```
-
-## Run the Development Server
-
-
+npm install
 ```
-npm run dev```
 
-This will start the development server and you can access the app at http://localhost:5173.
-
-## 5. Build the App for Production
+### 3. Environment Variables
+Create a `.env` file in the root directory and add the following:
 ```
-npm run build```
-###📂 Project Structure
+VITE_API_URL=http://localhost:3001/api
+```
 
-* **src/** Contains all the source code for the app
-* **components/** Reusable UI components
-* **features/** Redux slices for managing the application state
-* **assets/** Images, icons, and static assets
+### 4. Run the Development Server
+```
+npm run dev
+```
+This will start the development server, and you can access the app at http://localhost:5173.
 
-###📄 API Documentation
+### 5. Build the App for Production
+```
+npm run build
+```
+
+## 📂 Project Structure
+
+* **src/** - Contains all the source code for the app
+  * **components/** - Reusable UI components
+  * **features/** - Redux slices for managing application state
+  * **assets/** - Images, icons, and static assets
+
+## 📄 API Documentation
 This frontend is designed to work with the backend API. Please refer to the Backend README for details on setting up and using the API.
+
