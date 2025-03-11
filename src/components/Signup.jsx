@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../features/userSlice";
 import api from "../utils/api";
 import { isValidToken } from "../utils/auth";
+import {jwtDecode} from "jwt-decode";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -33,9 +34,11 @@ const Signup = () => {
 
     try {
       const response = await api.post("/users/signup", formData);
+      console.log(response.data);
       const { token } = response.data;
       const decoded = jwtDecode(token);
-      dispatch(login({ token, user: decoded })); // Dispatch login on signup 
+      dispatch(login({ token, user: decoded })); 
+      localStorage.setItem('token', token);
       setLoading(false);
       navigate('/'); 
     } catch (err) {
